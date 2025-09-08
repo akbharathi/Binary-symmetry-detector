@@ -8,13 +8,48 @@ You can also include images in this folder and reference them in the markdown. E
 -->
 
 ## How it works
+Working Principle
 
-Explain how your project works
+1) Inputs:
+
+* 8 toggle switches (IN0–IN7) represent the binary input.
+
+* A clock (CLK) and reset (RST_N) are available but not used in this pure gate design.
+
+2) Pairwise Comparison:
+
+* Each pair of bits (Di, Dj) from opposite ends is compared.
+
+* This is done using an XNOR gate (equivalence gate).
+
+* Example: D7 XNOR D0 = 1 if they are equal.
+
+3) All Pairs Must Match:
+
+* The results of all four XNOR comparisons are combined using AND gates.
+
+* If every comparison outputs 1, the final AND gate outputs 1.
+
+4) Output: 
+
+* The final result drives an LED.
+
+* LED ON → input word is symmetric.
+
+* LED OFF → input word is not symmetric.
 
 ## How to test
 
-Explain how to use your project
+1) Set Inputs
+
+* Use switches IN0–IN7 to enter an 8-bit word (D7..D0).
+
+2) Check LED
+
+* If the word is symmetric (palindrome), the LED will turn ON.
+
+* Otherwise, the LED stays OFF.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+* 1 LED light
