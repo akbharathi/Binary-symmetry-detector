@@ -15,36 +15,18 @@ The 8-Bit Binary Symmetry Detector is a digital logic circuit that analyzes an 8
 | IN5   | Input  | Bit 5                     |
 | IN6   | Input  | Bit 6                     |
 | IN7   | Input  | Bit 7 (MSB)               |
-| OUT1  | Output | All Zeros Detection       |
-| OUT2  | Output | All Ones Detection        |
-| OUT3  | Output | Palindrome Detection      |
-| OUT4  | Output | Mirror Symmetry           |
-| OUT5  | Output | Even Parity Check         |
-| OUT6  | Output | Odd Parity Check          |
-| OUT7  | Output | Special Pattern Detection |
-
-## Symmetry Detection Logic
-
-| Output | Condition | Description |
-|--------|-----------|-------------|
-| OUT1   | IN0-IN7 = 00000000 | All bits are 0 (Null pattern) |
-| OUT2   | IN0-IN7 = 11111111 | All bits are 1 (Full pattern) |
-| OUT3   | IN0=IN7, IN1=IN6, IN2=IN5, IN3=IN4 | Perfect palindrome symmetry |
-| OUT4   | IN0=IN7, IN1=IN6, IN2=IN5, IN3=IN4 | Mirror symmetry around center |
-| OUT5   | Even number of 1's | Even parity check |
-| OUT6   | Odd number of 1's  | Odd parity check |
-| OUT7   | Custom pattern     | Special pattern detection |
+| OUT0  | Output | Palindrome detection      |
 
 ## Truth Table Examples
 
-| Input (Binary)   | OUT1 | OUT2 | OUT3 | OUT4 | OUT5 | OUT6 | OUT7 |
-|------------------|------|------|------|------|------|------|------|
-| 00000000         | 1    | 0    | 1    | 1    | 1    | 0    | 0    |
-| 11111111         | 0    | 1    | 1    | 1    | 1    | 0    | 0    |
-| 01100110         | 0    | 0    | 1    | 1    | 1    | 0    | 0    |
-| 10011001         | 0    | 0    | 1    | 1    | 0    | 1    | 0    |
-| 01010101         | 0    | 0    | 0    | 0    | 0    | 1    | 1    |
-| 10101010         | 0    | 0    | 0    | 0    | 0    | 1    | 1    |
+| Input (Binary)   | Symmetric? |
+|------------------|------------|
+| 00000000         | Yes        |
+| 11111111         | Yes        |
+| 01100110         | Yes        |
+| 10011001         | Yes        |
+| 01010101         | No         |
+| 10101010         | No         |
 
 ## Applications
 
@@ -67,9 +49,7 @@ The 8-Bit Binary Symmetry Detector is a digital logic circuit that analyzes an 8
 ## How to Use
 
 1. Set the 8 input switches (IN0 to IN7) to desired binary values
-2. Observe the output LEDs (OUT1 to OUT7) to see detected symmetries
-3. Multiple outputs may activate simultaneously for patterns with multiple symmetrical properties
-4. Use truth table examples to verify circuit operation
+2. Observe the output LED to see detected palindrome sequences
 
 ## Technical Specifications
 
